@@ -1,0 +1,23 @@
+.alert {
+    margin-right:-500px;
+    margin-left:-10px;
+}
+
+.graphic {
+    margin-bottom:10px;
+}
+
+.ask {
+    margin-left: -500px;
+    margin-right:-500px;
+}  
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: center;
+  }
