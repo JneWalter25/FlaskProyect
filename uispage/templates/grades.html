@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<title>Grades</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='grades.css') }}">
+<body style="background-color:#221E1E;">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+        <a href="/home" class="w3-bar-item w3-button" style= "letter-spacing: 1px;">Proyecto <b>UIS</b></a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="/about" class="w3-bar-item w3-button" style= "letter-spacing: 1px;">About</a>
+        </div>
+      </div>
+  </div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <style>
+    body {margin-top: 50px;}
+    
+  </style>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class='col-md-8'>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class= 'alert alert-{{ category }}'>
+          <div class = 'test'>
+          {{ message }}
+          </div>
+        </div>
+      {% endfor%}
+    {% endif %}
+  {% endwith %}
+</div>
+<div class="w3-content w3-padding" style="max-width:1564px">
+        <style>    
+            body {text-align: center;}
+        </style>
+
+<!-- Project Section -->
+<div class="w3-container w3-padding-32" id="projects">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style= "color:white;font-family:'Lato', sans-serif">Calculate yor average grade!</h3>
+
+  <p style= "color:white;font-family:'Lato', sans-serif;" >You can put your grades in the left side and the % in the right side</p>
+  <div class="content-section">
+    <form method='POST' action=''>
+      {{ form.hidden_tag() }}
+    <fieldset class ='form-group'>
+      <div class='form-group'>
+        {{ form.grade1.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade1(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage1.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage1(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div class = 'form-group'>
+        {{ form.grade2.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade2(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage2.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage2(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div class = 'form-group'> 
+        {{ form.grade3.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade3(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage3.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage3(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div class = 'form-group'>        
+        {{ form.grade4.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade4(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage4.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage4(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div class = 'form-group'>
+        {{ form.grade5.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade5(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage5.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage5(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div class = 'form-group'>
+        {{ form.grade6.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+        {{ form.grade6(class="form-control-label", style= "color:black;'Lato', sans-serif ",type='number',step="any")}}
+        {{ form.percentage6.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+        {{ form.percentage6(class="form-control-label", style= "color:black;'Lato', sans-serif  ",type='number',step="any")}}
+      </div>
+      <div>
+        <h5 style= "color:white;font-family:'Lato', sans-serif">If you have less than 5 notes, just leave in the remaining
+        a 0</h5>
+      </div>
+      <div class = 'form-group'> 
+        {{ form.submit(class = 'btn btn-light')}}
+      </div>
+    </fieldset>
+    </form>
+  </div>
+
+ <!-- Plot bar-->> 
+ {% if data %}
+  <div class='graphic'>
+    <h2 style= "color:white;font-family:'Lato', sans-serif">In this Graphic you can see your grades and the grades that you need</h2>
+    <img src='data:image/png;base64,{{ data }}'/>
+  </div>
+ {% endif %}
+<!-- Image of UIS-->
+<div class="w3-container">
+  <img src="/static/uis.jpg" class="w3-image" style="width:100%">
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Have a good day</p>
+</footer>
+</body>
+</html>

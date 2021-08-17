@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<title>About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+<body style="background-color:#221E1E;">
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+      <a href="/home" class="w3-bar-item w3-button" style= "letter-spacing: 1px;">Proyecto <b>UIS</b></a>
+      <div class="w3-right w3-hide-small">
+        <a href="/grades" class="w3-bar-item w3-button" style= "letter-spacing: 1px;">Calculate your grades!</a>
+      </div>
+      <!-- Float links to the right. Hide them on small screens -->
+    </div>
+  </div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <style>
+    body {margin-top: 50px;}
+  </style>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+        <style>    
+            body {text-align: center;}
+        </style>
+  <!-- Myself Section -->
+  <div>
+    <div class="w3-content w3-padding" style="display:flex;flex-direction:column;max-width:1564px">
+        <img src ='/static/pfp.png' alt="Wal" style="align-self:center;width:60%">
+      <h3 style= "color:white;" >Jorge Walter S</h3>
+      <i style = "color:white;font-family:Arial";>Student Of Electronic Engineering</i>
+      <p style= "color:white;font-family:Arial";>Creator of this page</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about" ></div>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style= "color:white;font-family:Arial">About</h3>
+    <p style= "color:white;font-family:Arial">This is my Proyect of programation I, Credits to 
+    <a href="https://www.w3schools.com/w3css/w3css_templates.asp" style= "color:white;font-family:Arial">W3schools</a>, where i get the initial template of this website
+    </p>
+  </div>
+
+<!-- Project Section -->
+<div class="w3-container w3-padding-32" id="projects">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style= "color:white;font-family:Arial">Projects</h3>
+
+  <p style= "color:white;font-family:Arial" >These are my most important proyects</p>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="/static/tictac.png"  alt="John" style="width:100%">
+    <h3 style= "color:white;font-family:Arial">Tic Tac Toe</h3>
+    <p class="w3-opacity" style= "color:white;font-family:Arial">Basic Python</p>
+    <p style= "color:white;font-family:Arial">Tic-Tac-Toe Game developed with basic libraries of python</p>
+    <a href="https://github.com/JneWalter25/Tic-Tac-Toe/blob/main/TEST4.py" class="w3-button w3-light-grey w3-block">Watch The Code!</a>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="/static/bank.jpg" alt="Jane" style="width:84.5%">
+    <h3 style= "color:white;font-family:Arial">Simple Banking System</h3>
+    <p class="w3-opacity" style= "color:white;font-family:Arial">sqlite3, POO</p>
+    <p style= "color:white;font-family:Arial">Simple Banking System that use luhn algorithm and sqlite3</p>
+    <a href="https://github.com/JneWalter25/Simple-Banking-System/blob/main/TEST4.py" class="w3-button w3-light-grey w3-block">Watch The Code!</a>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="/static/scrap2.png" alt="Mike" style="width:100%;height:268.5px;">
+    <h3 style= "color:white;font-family:Arial">Web Scrapper</h3>
+    <p class="w3-opacity" style= "color:white;font-family:Arial">Python, BS4, requests</p>
+    <p style= "color:white;font-family:Arial">Basic application about web scraping using request and beautiful soup</p>
+    <a href="https://github.com/JneWalter25/WebScraper/blob/main/test2.py" class="w3-button w3-light-grey w3-block">Watch The Code!</a>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom"> 
+    <img src='/static/todolist.png' alt="Dan" style="width:91.5%">
+    <h3 style= "color:white;font-family:Arial">To Do List</h3>
+    <p class="w3-opacity" style= "color:white;font-family:Arial">Sqalchemy and datetime</p>
+    <p style= "color:white;font-family:Arial" >Basic To do list aplicattion using sqalchemy.</p>
+    <a href="https://github.com/JneWalter25/To-Do-List/blob/main/test.py" class="w3-button w3-light-grey w3-block">Watch The Code!</a>
+  </div>
+</div>
+
+<div class='col-md-8'>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      <div class= 'alert alert-{{ category }}'>
+        {{ message }}
+      </div>
+      {% endfor%}
+    {% endif %}
+  {% endwith %}
+</div>
+  <!-- Contact Section -->
+  <div class='container'>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style= "color:white;font-family:Arial">Contact</h3>
+    <p style= "color:white;font-family:Arial">If you have any ideas of how to improve this website you can contact me below here!</p>
+ <form method='POST' action=''>
+  {{ form.hidden_tag() }}
+<fieldset class ='form-group'>
+  <div class='form-group'>
+    {{ form.name.label(class="form-control-label", style= "color:white;'Lato', sans-serif ")}}
+    {{ form.name(class="form-control-label",placeholder='Name',style= "color:black;'Lato', sans-serif ")}}
+  </div>
+  <div class='form-group'>
+    {{ form.email.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+    {{ form.email(class="form-control-label",placeholder='Email', style= "color:black;'Lato', sans-serif  ")}}
+  </div>
+  <div class='form-group'>
+    {{ form.subject.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+    {{ form.subject(class="form-control-label",placeholder='Subject', style= "color:black;'Lato', sans-serif  ")}}
+  </div>
+  <div class='form-group'>
+    {{ form.information.label(class="form-control-label", style= "color:white;'Lato', sans-serif  ")}}
+    {{ form.information(class="form-control-label", placeholder='Information', style= "color:black;'Lato', sans-serif  ")}}
+  </div>
+  <div class = 'form-group'> 
+    {{ form.submit(class = 'btn btn-light')}}
+  </div>
+</fieldset>
+</form>
+  </div>
+  
+<!-- Image of UIS-->
+<div class="w3-container">
+  <img src="/static/uis.jpg" class="w3-image" style="width:100%">
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Have a good day</p>
+</footer>
+
+</body>
+</html>
