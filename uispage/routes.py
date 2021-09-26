@@ -2,7 +2,6 @@ from flask import render_template, request, flash,redirect
 from flask.helpers import url_for
 from uispage import app, mail
 from uispage.forms import GradesForm, ContactForm
-from uispage.config import email
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
@@ -86,6 +85,3 @@ def about():
             return render_template('about.html', form=form)
     return render_template('about.html', form=form)
 
-@app.route('/circuits', methods=['GET', 'POST'])
-def circuits():
-    return render_template('circuits.html')
